@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+//funções
+
+function mostra(frase) {
+	document.write(frase);
+	}
+
+
+function calculaIMC(altura, peso) {
+	var imc=(peso/(altura*altura));
+	return imc;
+}
+var nome = prompt("qual o seu nome?")
+var alturaDoUsuario = prompt(nome +(", qual sua altura?"))
+var pesoDoUsuario = prompt(nome + (",e o seu peso?"))
+var imcDoUsuario = calculaIMC(alturaDoUsuario, pesoDoUsuario);
+mostra("o seu imc é : "+imcDoUsuario )
+if (imcDoUsuario=>18.5 && imcDoUsuario<=35){
+	mostra("e ele está esta dentro dos limites saudáveis.")
+}
+
+</script>
+	

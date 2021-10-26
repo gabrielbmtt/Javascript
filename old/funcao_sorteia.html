@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<script>
+function sorteia (n) {
+	return Math.round (Math.random() * n)
+}
+function pulaLinha() {
+	document.write("<br/><hr/>")
+}
+function mostra(frase){
+	document.write(frase)
+	pulaLinha()
+}
+var numeroPensado = sorteia(100)
+
+var chute =prompt("qual numero pensei?")
+if (isNaN(chute)) {
+	mostra("apenas numeros sao validos")
+}
+if (chute == numeroPensado) {
+	mostra("acertou miseravi, eu pensei no:" + numeroPensado)
+}
+if (chute < numeroPensado) {
+	mostra("errou miseravi, eu pensei no :"+ numeroPensado + ",e ele é maior")
+}
+else {
+	mostra("errou miseravi, eu pensei no :"+ numeroPensado + ",e ele é menor")
+}
+</script>

@@ -1,0 +1,20 @@
+<canvas id = "tela" width="600" height="400">
+</canvas>
+<script>
+var tela = document.getElementById("tela")
+var c = tela.getContext("2d")
+//ret 1 red
+c.fillStyle= "red"
+c.fillRect(0,0,600,75)
+//ret 2 blue
+c.fillStyle = "blue"
+c.fillRect(0,75,600,250)
+//ret 3 red
+c.fillStyle= "red"
+c.fillRect(0,325,600,75)
+//circle white
+c.fillStyle = "white"
+c.beginPath()
+c.arc(300,200,50,0,2*3.14)
+c.fill()
+</script>

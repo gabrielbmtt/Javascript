@@ -1,0 +1,12 @@
+<script>
+var numeroP = Math.round(Math.random() * 100)
+var chute = parseInt(prompt("qual numero pensei?"))
+function mostra(frase) {
+	document.write(frase +"<br>")
+}	
+if (chute== numeroP) {
+	mostra("acertou miseravi")
+} else { 
+	mostra("errou eu pensei no " + numeroP)
+}
+</script>

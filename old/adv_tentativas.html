@@ -1,0 +1,24 @@
+<script>
+var numeroP = Math.round(Math.random() * 10)
+
+function mostra(frase) {
+	document.write(frase)
+}	
+
+
+while(true) {
+	var chute =prompt("qual numero pensei?")
+	if(chute==numeroP) {
+		alert("parabens,acertou")
+		break
+	} else {
+		if (chute<numeroP) {
+		alert("errou,seu numero é menor")
+		} else {
+			alert("errou,seu numero é maior")
+			}
+		}
+
+}
+
+</script>

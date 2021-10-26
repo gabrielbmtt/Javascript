@@ -1,0 +1,39 @@
+
+<input type = "text" id = "nome"/>
+<input type ="submit" value = "diga seu nome"/>
+ </div>
+ <div>
+<input type = "text" id = "idade"/>
+<input type ="submit" value = "diga sua idade"/>
+ </div>
+ <div>
+<input type = "text" id = "peso"/>
+<input type ="submit" value = "diga seu peso"/>
+ </div>
+ <div>
+<input type = "text" id = "altura"/>
+<input type ="submit" value = "diga seu altura"/>
+ </div>
+ <div>
+<input type ="submit" id = "botao" onclick="IMC()" value = "calcular imc"/>
+<script>
+
+function IMC() {
+	
+	var caixaDoNome = document.getElementById("nome").value
+	var caixaDaIdade = document.getElementById("idade").value
+	var caixaDoPeso = document.getElementById("peso").value
+	var caixaDaAltura = document.getElementById("altura").value
+	var imcDoUsuario = caixaDoPeso/(caixaDaAltura*caixaDaAltura)
+	alert("ola " + caixaDoNome + ", o seu imc é de: " + imcDoUsuario)
+	
+}
+
+var botao =  document.getElementById("botao")
+ 
+// botao.addEventListener ('click',IMC) 
+// ou onclick="IMC()"
+
+
+</script>
+

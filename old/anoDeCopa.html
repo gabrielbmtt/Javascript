@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<script>
+var anoDeCopa = parseInt(prompt("ano inicial?"))
+function mostra(frase) {
+	document.write(frase + "<br/><hr/>")
+}
+var proxCopa = parseInt(prompt("qual é o ano limite?"))
+while(anoDeCopa<=proxCopa) {
+	mostra(anoDeCopa + ("tem copa!"))
+	anoDeCopa = anoDeCopa + 4
+}
+ if (anoDeCopa<=proxCopa) {
+	mostra("esses foram os anos que tiveram copa ate" + proxCopa)
+
+} 
+</script>
