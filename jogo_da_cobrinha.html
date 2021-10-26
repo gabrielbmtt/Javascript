@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da cobrinha</title>
+</head>
+<body>
+    <canvas id="tela" width="400" height="400">
+
+    </canvas>
+    <script>
+    window.onload=function(){
+        document.addEventListener("keydown",keyPush)
+        var tela=document.getElementById("tela");
+        var c=tela.getContext("2d");
+        setInterval(jogo, 80);
+        // var velocidades
+        const vel=1;
+        var vx=0;
+        var vy=0;
+        //var pontos iniciais da cobrinha
+        var px=10
+        var py=10
+        //var peças
+        var tampeça=20
+        var qntpeça=20
+        //var pontos inicias da maçã
+        var ax=15
+        var ay=15
+         ///
+         var rastro=[]
+         cauda=5 
+        function jogo(){
+            px += vx
+            py += vy
+            
+            if(px<0){
+                px=qntpeça-1
+            }
+            if(px>qntpeça-1){
+                px=0
+            }
+            if(py<0){
+                py=qntpeça-1
+            }
+            if(py>qntpeça-1){
+                py=0
+            }
+            //tela
+            c.fillStyle="black";
+            c.fillRect(0,0,400,400);
+            //maçã
+            c.fillStyle="red"
+            c.fillRect(ax*tampeça,ay*qntpeça,tampeça,tampeça)
+            //cobra
+            c.fillStyle="gray"
+            for(var i=0;i<rastro.length;i++){
+                c.fillRect(rastro[i].x*tampeça,rastro[i].y*tampeça,tampeça-1,tampeça-1)
+                if(rastro[i].x==px && rastro[i].y==py){
+                    vx=0
+                    vy=0
+                    cauda=5
+                }
+            }
+            rastro.push({x:px,y:py})
+            while(rastro.length>cauda){
+                rastro.shift()
+            }
+            if(ax==px && ay==py){
+                cauda++
+                ax=Math.floor(Math.random()*qntpeça)
+                ay=Math.floor(Math.random()*qntpeça)
+            }
+        }
+        function keyPush(event){
+            switch(event.keyCode){
+                case 37: //esquerda
+                vx= -vel
+                vy=0
+                break;
+                case 38: //cima
+                vx= 0
+                vy=-vel
+                break;
+                case 39: //direita
+                vx= vel
+                vy=0
+                break;
+                case 40: //baixo
+                vx= 0
+                vy=vel
+                break;
+               
+            }
+
+        }
+
+
+
+    }
+    </script>
+
+</body>
+</html>
